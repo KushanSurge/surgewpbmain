@@ -20,12 +20,18 @@ define( 'SURGEWPB_URL',        plugin_dir_url( __FILE__ ) );
 define( 'SURGEWPB_TEXTDOMAIN', 'surgewpb' );
 
 /**
+** Dev Mode — set to true to enable the SurgeWP Dev admin pages
+** and disable asset caching (versions become time()).
+**/
+define( 'SURGEWPBP_IS_DEV', false );
+
+/**
 ** Load Core Files
 **/
 require_once SURGEWPB_DIR . 'includes/core/lib-loader.php';
 require_once SURGEWPB_DIR . 'includes/core/asset-loader.php';
 require_once SURGEWPB_DIR . 'includes/core/loader.php';
-require_once SURGEWPB_DIR . 'includes/core/cli.php';
+require_once SURGEWPB_DIR . 'includes/core/dev-admin.php';
 
 /**
 ** Boot Plugin
@@ -42,18 +48,20 @@ function surgewpb_init() {
 add_action( 'wp_enqueue_scripts', 'surgewpb_enqueue_common_assets' );
 
 function surgewpb_enqueue_common_assets() {
+	$ver = SURGEWPBP_IS_DEV ? time() : SURGEWPB_VERSION;
+
 	wp_enqueue_style(
 		'surgewpb-common-css',
 		SURGEWPB_URL . 'includes/common/surgewpb-common.css',
 		[],
-		SURGEWPB_VERSION
+		$ver
 	);
 
 	wp_enqueue_script(
 		'surgewpb-common-js',
 		SURGEWPB_URL . 'includes/common/surgewpb-common.js',
 		[ 'jquery' ],
-		SURGEWPB_VERSION,
+		$ver,
 		true
 	);
 

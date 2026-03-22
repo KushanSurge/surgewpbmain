@@ -22,8 +22,25 @@ class Surgewpb_Loader {
 	** then hook shortcode registration into 'wp' when post content is available.
 	**/
 	public function boot() {
+		$this->load_functions();
 		$this->load_modules();
 		add_action( 'wp', [ $this, 'register_shortcodes' ] );
+	}
+
+	/**
+	** Require all PHP files found in includes/functions/.
+	**/
+	private function load_functions() {
+		$dir   = SURGEWPB_DIR . 'includes/functions/';
+		$files = glob( $dir . '*.php' );
+
+		if ( empty( $files ) ) {
+			return;
+		}
+
+		foreach ( $files as $file ) {
+			require_once $file;
+		}
 	}
 
 	/**

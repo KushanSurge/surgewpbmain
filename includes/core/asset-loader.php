@@ -23,12 +23,14 @@ class Surgewpb_Asset_Loader {
 		$css_handle = 'surgewpb-' . $shortcode_name . '-css';
 		$js_handle  = 'surgewpb-' . $shortcode_name . '-js';
 
+		$ver = SURGEWPBP_IS_DEV ? time() : SURGEWPB_VERSION;
+
 		if ( file_exists( $base_dir . $shortcode_name . '.css' ) && ! in_array( $css_handle, self::$enqueued, true ) ) {
 			wp_enqueue_style(
 				$css_handle,
 				$base_url . $shortcode_name . '.css',
 				[ 'surgewpb-common-css' ],
-				SURGEWPB_VERSION
+				$ver
 			);
 			self::$enqueued[] = $css_handle;
 		}
@@ -38,7 +40,7 @@ class Surgewpb_Asset_Loader {
 				$js_handle,
 				$base_url . $shortcode_name . '.js',
 				[ 'surgewpb-common-js' ],
-				SURGEWPB_VERSION,
+				$ver,
 				true
 			);
 
