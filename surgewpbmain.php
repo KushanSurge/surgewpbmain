@@ -23,7 +23,7 @@ define( 'SURGEWPB_TEXTDOMAIN', 'surgewpb' );
 ** Dev Mode — set to true to enable the SurgeWP Dev admin pages
 ** and disable asset caching (versions become time()).
 **/
-define( 'SURGEWPBP_IS_DEV', false );
+define( 'SURGEWPBP_IS_DEV', true );
 
 /**
 ** Load Core Files
