@@ -9,7 +9,7 @@
  * Domain Path: /languages
  * GitHub Plugin URI: KushanSurge/surgewpbmain
  * GitHub Branch: main
- * GitHub Token: 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
+ * GitHub Token: personal_access_token_goes_here
  */
 
 defined( 'ABSPATH' ) || exit;
