@@ -18,7 +18,7 @@ WordPress plugins tend to grow into tangled files where assets load everywhere, 
 - **Enforced OOP** — every shortcode is a class. Logic, AJAX handlers, and rendering are organized and namespaced by default.
 - **Dev mode** — disables asset caching during development and enables an admin page to scaffold new shortcode files on the fly without touching the terminal.
 - **Version control friendly** — the plugin carries GitHub-compatible plugin headers, enabling update tracking via a plugin manager. *(TBD)*
-- **Custom functions support** — a `/functions/` folder with auto-discovery is planned for shared utility functions that don't belong to any single shortcode. *(TBD)*
+- **Custom functions support** — a `/functions/` folder with auto-discovery is planned for shared utility functions that don't belong to any single shortcode.
 
 ---
 
