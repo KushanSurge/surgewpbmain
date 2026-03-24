@@ -1,6 +1,6 @@
 # SurgeWP Boilerplate
 
-A modular, shortcode-based WordPress plugin boilerplate with automatic asset loading, AJAX security, library dependency management, and WP-CLI scaffolding.
+A modular, shortcode-based WordPress plugin boilerplate with automatic asset loading, AJAX security, and library dependency management.
 
 ---
 
@@ -17,7 +17,6 @@ WordPress plugins tend to grow into tangled files where assets load everywhere, 
 - **Built-in AJAX security** — nonce generation, verification, input sanitization, and output escaping are baked into the scaffolding pattern from the start.
 - **Enforced OOP** — every shortcode is a class. Logic, AJAX handlers, and rendering are organized and namespaced by default.
 - **Dev mode** — disables asset caching during development and enables an admin page to scaffold new shortcode files on the fly without touching the terminal.
-- **WP-CLI scaffolding** — `wp surgewpb make:shortcode <name>` generates a ready-to-use shortcode class, JS module, and CSS file in one command.
 - **Version control friendly** — the plugin carries GitHub-compatible plugin headers, enabling update tracking via a plugin manager. *(TBD)*
 - **Custom functions support** — a `/functions/` folder with auto-discovery is planned for shared utility functions that don't belong to any single shortcode. *(TBD)*
 
@@ -38,8 +37,7 @@ surgewpbmain/
 │   ├── core/
 │   │   ├── loader.php               # Shortcode auto-discovery & registration
 │   │   ├── asset-loader.php         # Per-shortcode CSS/JS enqueue
-│   │   ├── lib-loader.php           # Shared library enqueue
-│   │   └── cli.php                  # WP-CLI generator command
+│   │   └── lib-loader.php           # Shared library enqueue
 │   ├── common/
 │   │   ├── surgewpb-common.js       # AJAX helper, module init, post-loop
 │   │   └── surgewpb-common.css      # Shared utility classes
@@ -211,33 +209,6 @@ In your shortcode JS:
 ```
 
 No `DOMContentLoaded` needed. Common JS calls every registered module once on document ready.
-
----
-
-## WP-CLI Generator
-
-Generate a new shortcode module scaffold:
-
-```bash
-wp surgewpb make:shortcode <name>
-```
-
-Example:
-
-```bash
-wp surgewpb make:shortcode my-slider
-```
-
-Creates:
-
-```
-includes/shortcodes/my-slider/
-├── my-slider.php   (class Surgewpb_My_Slider, tag [my_slider])
-├── my-slider.js
-└── my-slider.css
-```
-
-The generated class includes `render()`, `Surgewpb_Asset_Loader::load()`, and the module JS pattern — ready to use immediately.
 
 ---
 
