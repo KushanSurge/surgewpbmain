@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Plugin Name: SurgeWP Boilerplate
  * Plugin URI:  https://surge.global
