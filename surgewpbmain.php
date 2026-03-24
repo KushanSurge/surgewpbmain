@@ -2,7 +2,7 @@
 /**
  * Plugin Name: SurgeWP Boilerplate
  * Plugin URI:  https://surge.global
- * Description: A modular, shortcode-based WordPress plugin boilerplate.
+ * Description: A modular WordPress plugin boilerplate.
  * Version:     12.0
  * Author:      Surge Global
  * Text Domain: surgewpb
