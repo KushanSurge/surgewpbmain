@@ -7,6 +7,9 @@
  * Author:      Surge Global
  * Text Domain: surgewpb
  * Domain Path: /languages
+ * GitHub Plugin URI: KushanSurge/surgewpbmain
+ * GitHub Branch: main
+ * GitHub Token: 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
  */
 
 defined( 'ABSPATH' ) || exit;
