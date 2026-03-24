@@ -3,7 +3,7 @@
  * Plugin Name: SurgeWP Boilerplate
  * Plugin URI:  https://surge.global
  * Description: A modular WordPress plugin boilerplate.
- * Version:     13.1
+ * Version:     13.2
  * Author:      Surge Global
  * Text Domain: surgewpb
  * Domain Path: /languages
@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 /**
 ** Plugin Constants
 **/
-define( 'SURGEWPB_VERSION',    '13.1.0' );
+define( 'SURGEWPB_VERSION',    '13.2.0' );
 define( 'SURGEWPB_DIR',        plugin_dir_path( __FILE__ ) );
 define( 'SURGEWPB_URL',        plugin_dir_url( __FILE__ ) );
 define( 'SURGEWPB_TEXTDOMAIN', 'surgewpb' );
