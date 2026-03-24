@@ -3,12 +3,12 @@
  * Plugin Name: SurgeWP Boilerplate
  * Plugin URI:  https://surge.global
  * Description: A modular, shortcode-based WordPress plugin boilerplate.
- * Version:     10.0
+ * Version:     12.0
  * Author:      Surge Global
  * Text Domain: surgewpb
  * Domain Path: /languages
  * GitHub Plugin URI: KushanSurge/surgewpbmain
- * GitHub Branch: improved-libs
+ * GitHub Branch: main
  * GitHub Token: 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
  */
 
