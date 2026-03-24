@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 /**
 ** Plugin Constants
 **/
-define( 'SURGEWPB_VERSION',    '1.0.0' );
+define( 'SURGEWPB_VERSION',    '1.0.1' );
 define( 'SURGEWPB_DIR',        plugin_dir_path( __FILE__ ) );
 define( 'SURGEWPB_URL',        plugin_dir_url( __FILE__ ) );
 define( 'SURGEWPB_TEXTDOMAIN', 'surgewpb' );
