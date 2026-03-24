@@ -4,6 +4,25 @@ A modular, shortcode-based WordPress plugin boilerplate with automatic asset loa
 
 ---
 
+## Why This Exists
+
+WordPress plugins tend to grow into tangled files where assets load everywhere, AJAX handlers are scattered, and two developers can't touch the same file without a conflict. SurgeWP Boilerplate is designed to prevent all of that from the start.
+
+**Design goals:**
+
+- **Independent shortcodes** — each shortcode is a self-contained folder. A developer can own a shortcode end-to-end without touching any file another developer is working on. No waiting, no merge conflicts on shared files.
+- **Assets load only when needed** — CSS and JS are enqueued only when the shortcode actually appears on the page. Nothing floods the browser for pages that don't use a given shortcode.
+- **Shared libraries, defined once** — third-party libs (Swiper, AOS, etc.) are declared in a central registry and loaded at most once per page, regardless of how many shortcodes request them.
+- **Auto asset discovery** — drop a `.css` or `.js` file alongside a shortcode PHP file and it gets picked up automatically. No manual `wp_enqueue_*` calls needed — though libraries do need a registry entry.
+- **Built-in AJAX security** — nonce generation, verification, input sanitization, and output escaping are baked into the scaffolding pattern from the start.
+- **Enforced OOP** — every shortcode is a class. Logic, AJAX handlers, and rendering are organized and namespaced by default.
+- **Dev mode** — disables asset caching during development and enables an admin page to scaffold new shortcode files on the fly without touching the terminal.
+- **WP-CLI scaffolding** — `wp surgewpb make:shortcode <name>` generates a ready-to-use shortcode class, JS module, and CSS file in one command.
+- **Version control friendly** — the plugin carries GitHub-compatible plugin headers, enabling update tracking via a plugin manager. *(TBD)*
+- **Custom functions support** — a `/functions/` folder with auto-discovery is planned for shared utility functions that don't belong to any single shortcode. *(TBD)*
+
+---
+
 ## Framework Overview
 
 The boilerplate provides a zero-friction foundation for shortcode plugins. Shortcodes are fully self-contained modules. Adding a new shortcode requires only creating a folder and a class — everything else (registration, asset loading, AJAX wiring) is automatic.
