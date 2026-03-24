@@ -1,0 +1,72 @@
+/* ============================================================
+   Post Slider
+   Styles scoped to .surgewpb-post-slider so they never leak
+   into other Swiper instances on the same page.
+   ============================================================ */
+
+/* Outer wrapper — contains the whole component */
+.surgewpb-post-slider {
+	position: relative;
+	width: 100%;
+}
+
+/* Swiper container — overflow:hidden clips slides outside the viewport */
+.surgewpb-post-slider__swiper {
+	width: 100%;
+	overflow: hidden;
+}
+
+/* Individual slide — centred flex so the title sits in the middle */
+.surgewpb-post-slider__slide {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 200px;
+	padding: 40px 80px; /* Horizontal padding keeps the title clear of the nav arrows */
+	box-sizing: border-box;
+	background-color: #f5f5f5;
+	text-align: center;
+}
+
+/* Anchor wraps the entire slide — remove default link styling */
+.surgewpb-post-slider__link {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Underline the title on hover to signal it's clickable */
+.surgewpb-post-slider__link:hover .surgewpb-post-slider__title {
+	text-decoration: underline;
+}
+
+/* Post title */
+.surgewpb-post-slider__title {
+	display: block;
+	font-size: 1.5rem;
+	font-weight: 600;
+	line-height: 1.3;
+	color: #1a1a1a;
+}
+
+/* Navigation arrows
+   Swiper renders the arrow icons via ::after pseudo-elements.
+   We only override the colour here and leave sizing to Swiper defaults. */
+.surgewpb-post-slider__prev,
+.surgewpb-post-slider__next {
+	color: #1a1a1a;
+}
+
+.surgewpb-post-slider__prev::after,
+.surgewpb-post-slider__next::after {
+	font-size: 1.25rem;
+}
+
+/* Pagination dots — shown below the slider */
+.surgewpb-post-slider__pagination {
+	margin-top: 12px;
+}
+
+/* Active dot matches the title colour */
+.surgewpb-post-slider__pagination .swiper-pagination-bullet-active {
+	background-color: #1a1a1a;
+}

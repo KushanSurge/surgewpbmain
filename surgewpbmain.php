@@ -1,15 +1,15 @@
-<?php 
+<?php
 /**
  * Plugin Name: SurgeWP Boilerplate
  * Plugin URI:  https://surge.global
  * Description: A modular WordPress plugin boilerplate.
- * Version:     12.1
+ * Version:     13.1
  * Author:      Surge Global
  * Text Domain: surgewpb
  * Domain Path: /languages
  * GitHub Plugin URI: KushanSurge/surgewpbmain
  * GitHub Branch: main
- * GitHub Token: personal_access_token_here
+ * GitHub Token: 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
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 /**
 ** Plugin Constants
 **/
-define( 'SURGEWPB_VERSION',    '1.0.1' );
+define( 'SURGEWPB_VERSION',    '13.1.0' );
 define( 'SURGEWPB_DIR',        plugin_dir_path( __FILE__ ) );
 define( 'SURGEWPB_URL',        plugin_dir_url( __FILE__ ) );
 define( 'SURGEWPB_TEXTDOMAIN', 'surgewpb' );
