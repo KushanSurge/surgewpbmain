@@ -25,8 +25,7 @@ surgewpbmain/
 │   │   ├── surgewpb-common.js       # AJAX helper, module init, post-loop
 │   │   └── surgewpb-common.css      # Shared utility classes
 │   ├── libs/
-│   │   ├── swiper.php               # Swiper library definition
-│   │   └── aos.php                  # AOS library definition
+│   │   └── libraries.php            # All library definitions (registry)
 │   └── shortcodes/
 │       ├── helloworld/
 │       │   └── helloworld.php
@@ -117,17 +116,20 @@ Declare a library in your shortcode class:
 public $libs = ['swiper'];
 ```
 
-Define the library in `includes/libs/swiper.php`:
+All libraries are defined in `includes/libs/libraries.php` as a single registry array. To add a new library:
+
+1. Drop its assets into `assets/libs/<key>/`
+2. Add an entry to the registry:
 
 ```php
-return [
+'swiper' => [
     'handle' => 'surgewpb-swiper',
     'css'    => [ 'assets/libs/swiper/swiper.css' ],
     'js'     => [ 'assets/libs/swiper/swiper.js' ],
-];
+],
 ```
 
-Place the actual vendor files in `assets/libs/swiper/`. Each library is loaded only once per page regardless of how many shortcodes declare it.
+Each library is loaded only once per page regardless of how many shortcodes declare it.
 
 ---
 
