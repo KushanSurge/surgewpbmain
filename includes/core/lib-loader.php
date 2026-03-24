@@ -3,12 +3,12 @@ defined( 'ABSPATH' ) || exit;
 
 /**
 ** Library Loader — registers and enqueues shared third-party assets declared by shortcodes.
-** Definitions live in includes/libs/<key>.php and are loaded once per page.
+** All definitions live in includes/libs/libraries.php and are loaded once per page.
 **/
 class Surgewpb_Lib_Loader {
 
 	private static $loaded      = [];
-	private static $definitions = [];
+	private static $definitions = null;
 
 	/**
 	** Enqueue one or more libraries by their key (e.g. 'swiper', 'aos').
@@ -41,22 +41,13 @@ class Surgewpb_Lib_Loader {
 	}
 
 	/**
-	** Load and cache a library definition from includes/libs/<key>.php.
+	** Load and cache a library definition from includes/libs/libraries.php.
 	**/
 	private static function get_definition( $lib_key ) {
-		if ( isset( self::$definitions[ $lib_key ] ) ) {
-			return self::$definitions[ $lib_key ];
+		if ( null === self::$definitions ) {
+			self::$definitions = require SURGEWPB_DIR . 'includes/libs/libraries.php';
 		}
 
-		$lib_file = SURGEWPB_DIR . 'includes/libs/' . sanitize_file_name( $lib_key ) . '.php';
-
-		if ( ! file_exists( $lib_file ) ) {
-			return null;
-		}
-
-		$definition                    = require $lib_file;
-		self::$definitions[ $lib_key ] = $definition;
-
-		return $definition;
+		return self::$definitions[ $lib_key ] ?? null;
 	}
 }
